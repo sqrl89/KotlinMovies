@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "649472612711",
+    "project_id": "kotlinmovie-55eaf",
+    "storage_bucket": "kotlinmovie-55eaf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:649472612711:android:4079380c80d9e12400b7c2",
+        "android_client_info": {
+          "package_name": "com.alex.kotlinmovies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "649472612711-3i1oab48lknl3q6cstrn5l2bms2q0rf5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.alex.kotlinmovies",
+            "certificate_hash": "cc08d6f870aae0dc7e710aa5442e41da2ebc1c4a"
+          }
+        },
+        {
+          "client_id": "649472612711-s1s2qmtcafkgblf3te7sjovsusb5fk36.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVwmLTj7CCFIA6-KrJpGFnta4iIwOhI2c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "649472612711-s1s2qmtcafkgblf3te7sjovsusb5fk36.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

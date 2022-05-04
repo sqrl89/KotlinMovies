@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">TheBestMovies</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+    <string name="forgot_your_password">Forgot your password?</string>
+    <string name="already_registered_login_me">Already registered. Login me!</string>
+    <string name="email">Email</string>
+    <string name="title_activity_registration">Registration</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="movie_s_name">Movie\'s name</string>
+    <string name="overview">Overview</string>
+    <string name="release_date_28_april_1989">Release date:</string>
+    <string name="score">Score:</string>
+    <string name="_9_8">9.8</string>
+    <string name="date">28 april 1989</string>
+
+
+</resources>
