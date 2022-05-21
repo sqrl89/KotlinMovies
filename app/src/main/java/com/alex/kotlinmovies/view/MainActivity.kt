@@ -13,6 +13,15 @@ import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
+    // TODO добавить splash - загрузка, пока идет запрос (корутины)
+    // todo single activity + Navigation
+    // todo поменять API на кинопоиск??, чтобы пользовать без VPN
+    // todo добавить функционал: просмотр трейлера, еще что-нибудь
+    // todo уточнить насчет ViewModel - правильно будет наследоваться от ViewModel
+    // todo регистрация. нужна ли?
+    // todo cache?
+    // todo активность с пользователем
+
 
     private val mMainActivityViewModel: MainActivityViewModel = MainActivityViewModel()
 
