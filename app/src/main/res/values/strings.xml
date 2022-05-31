@@ -13,10 +13,16 @@
     <string name="previous">Previous</string>
     <string name="movie_s_name">Movie\'s name</string>
     <string name="overview">Overview</string>
-    <string name="release_date_28_april_1989">Release date:</string>
+    <string name="release_date_en">Release date:</string>
     <string name="score">Score:</string>
     <string name="_9_8">9.8</string>
     <string name="date">28 april 1989</string>
+    <string name="film_overview">Обзор фильма</string>
+    <string name="release_date">Премьера:</string>
+    <string name="rating">IMDb:</string>
+    <string name="tagline">tagline</string>
+    <string name="genre">Genre</string>
+    <string name="country">Country</string>
 
 
 </resources>

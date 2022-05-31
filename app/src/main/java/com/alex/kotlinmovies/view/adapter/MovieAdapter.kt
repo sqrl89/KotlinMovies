@@ -9,6 +9,7 @@ import com.alex.kotlinmovies.R
 import com.alex.kotlinmovies.data.Result
 import com.squareup.picasso.Picasso
 
+
 class MovieAdapter(
     private val mList: List<Result?>,
     val mItemClickListener: ItemClickListener
@@ -33,10 +34,12 @@ class MovieAdapter(
 
     inner class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         val itemImage: ImageView = itemView.findViewById(R.id.itemImage)
+
         init {
             ItemView.setOnClickListener {
                 mList[position]?.id?.let { it -> mItemClickListener.onItemClick(it) }
             }
         }
     }
+
 }

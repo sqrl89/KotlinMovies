@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.alex.kotlinmovies.view.adapter.MovieAdapter
 import com.alex.kotlinmovies.databinding.ActivityMoviesBinding
+import com.alex.kotlinmovies.model.repository.MoviesDBRepositoryImpl
 import com.alex.kotlinmovies.viewmodel.MoviesViewModel
 
 class MoviesActivity : AppCompatActivity(), MovieAdapter.ItemClickListener {
@@ -36,7 +37,7 @@ class MoviesActivity : AppCompatActivity(), MovieAdapter.ItemClickListener {
 
     private fun initViews() {
         mRcView = mBinding.rvMovies
-        mViewModel = MoviesViewModel()
+        mViewModel = MoviesViewModel(MoviesDBRepositoryImpl())
     }
 
     override fun onBackPressed() {

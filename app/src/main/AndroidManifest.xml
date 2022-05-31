@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.alex.kotlinmovies">
+    package="com.alex.kotlinmovies" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -9,7 +9,10 @@
         android:icon="@drawable/ic_baseline_movie_filter_24"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.KotlinMovies">
+        android:theme="@style/Theme.KotlinMovies" >
+        <activity
+            android:name=".view.MainActivity"
+            android:exported="true" />
         <activity
             android:name=".view.MovieDetailsActivity"
             android:exported="false" />
@@ -19,14 +22,18 @@
             android:label="@string/title_activity_registration"
             android:theme="@style/Theme.KotlinMovies.NoActionBar" />
         <activity
-            android:name=".view.MainActivity"
-            android:exported="true">
+            android:name=".view.SplashActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

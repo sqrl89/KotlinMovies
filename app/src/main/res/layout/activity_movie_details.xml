@@ -5,121 +5,255 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".view.MovieDetailsActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context=".view.MovieDetailsActivity">
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/movie_details_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/movie_s_name"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/movie_details_header_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/movie_details_title">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/movie_details_image"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:paddingStart="5dp"
-                android:paddingEnd="5dp"
+                android:layout_height="221dp"
+                android:background="@drawable/background"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/movie_details_header_card" />
+
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/movie_details_body_container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/movie_details_header_card">
+            app:layout_constraintTop_toBottomOf="@+id/movie_details_header_card">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/movie_details_body_constraint"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="4dp">
+                android:layout_height="match_parent"
+                android:background="@drawable/background"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp">
 
-                <TextView
-                    android:id="@+id/movie_details_body_overview_label"
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/movie_details_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:text="@string/overview"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/be_vietnam_bold"
+                    android:gravity="center"
+                    android:text="@string/movie_s_name"
+                    android:textColor="#FFFFFF"
                     android:textSize="24sp"
                     android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/movie_details_body_release_date"
+                    android:id="@+id/movie_details_tagline"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:text="@string/release_date_28_april_1989"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/be_vietnam_bold"
+                    android:gravity="center"
+                    android:text="@string/tagline"
+                    android:textAlignment="center"
+                    android:textColor="#B3FFFFFF"
                     android:textSize="18sp"
                     android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/movie_details_body_overview_label" />
+                    app:layout_constraintTop_toBottomOf="@+id/movie_details_title" />
 
-                <TextView
-                    android:id="@+id/movie_details_body_release_date_item"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:text="@string/date"
-                    android:textSize="18sp"
-
-                    app:layout_constraintStart_toEndOf="@+id/movie_details_body_release_date"
-                    app:layout_constraintTop_toTopOf="@+id/movie_details_body_release_date" />
-
-                <TextView
-                    android:id="@+id/movie_details_body_score"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/movie_details_body_release_container"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:text="@string/score"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="@+id/movie_details_body_release_date"
-                    app:layout_constraintTop_toBottomOf="@+id/movie_details_body_release_date" />
+                    android:elevation="4dp"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/movie_details_tagline">
 
-                <TextView
-                    android:id="@+id/movie_details_body_score_item"
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/icons"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp">
+
+                        <TextView
+                            android:id="@+id/movie_details_body_release_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/be_vietnam_bold"
+                            android:text="@string/release_date"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/movie_details_body_release_date_item"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:fontFamily="@font/be_vietnam_bold"
+                            android:text="@string/date"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"
+                            app:layout_constraintStart_toEndOf="@+id/movie_details_body_release_date"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/movie_details_body_genre_container"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:text="@string/_9_8"
-                    android:textSize="18sp"
-                    app:layout_constraintStart_toEndOf="@+id/movie_details_body_score"
-                    app:layout_constraintTop_toTopOf="@+id/movie_details_body_score" />
+                    android:elevation="4dp"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/movie_details_body_release_container">
 
-                <TextView
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/icons"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp">
+
+                        <TextView
+                            android:id="@+id/movie_details_body_genre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/be_vietnam_bold"
+                            android:text="@string/genre"
+                            android:textAlignment="textStart"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/movie_details_body_rating_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:backgroundTint="#F5C518"
+                    android:elevation="4dp"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintStart_toStartOf="@+id/movie_details_body_release_container"
+                    app:layout_constraintTop_toBottomOf="@+id/movie_details_body_release_container">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:paddingBottom="1dp">
+
+                        <TextView
+                            android:id="@+id/movie_details_body_score_item"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:fontFamily="@font/be_vietnam_bold"
+                            android:text="@string/_9_8"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toEndOf="@+id/movie_details_body_score"
+                            app:layout_constraintTop_toTopOf="@+id/movie_details_body_score" />
+
+                        <TextView
+                            android:id="@+id/movie_details_body_score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/be_vietnam_bold"
+                            android:text="@string/rating"
+                            android:textColor="@color/black"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/movie_details_body_country_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:elevation="4dp"
+                    app:cardCornerRadius="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/movie_details_body_genre_container">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/icons"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp">
+
+                        <TextView
+                            android:id="@+id/movie_details_body_country"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/be_vietnam_bold"
+                            android:text="@string/country"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="18sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <com.bluejamesbond.text.DocumentView
                     android:id="@+id/movie_details_body_main_overview_item"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginBottom="2dp"
-                    android:text="@string/overview"
-                    android:textSize="18sp"
+                    app:documentView_text="@string/overview"
+                    app:documentView_textAlignment="justified"
+                    app:documentView_textColor="#FFFFFF"
+                    app:documentView_textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/movie_details_body_score"
-                    app:layout_constraintTop_toBottomOf="@+id/movie_details_body_score" />
+                    app:layout_constraintStart_toStartOf="@+id/movie_details_body_rating_container"
+                    app:layout_constraintTop_toBottomOf="@+id/movie_details_body_rating_container"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <TextView
+                    android:id="@+id/movie_details_body_main_trailer_URL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="trailer URL"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/movie_details_body_rating_container" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
