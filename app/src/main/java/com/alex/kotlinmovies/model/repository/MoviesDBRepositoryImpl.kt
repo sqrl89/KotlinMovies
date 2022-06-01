@@ -16,11 +16,11 @@ class MoviesDBRepositoryImpl : MoviesDBRepository {
     }
 
     override fun getMovieDetails(id:Int, apikey: String): Call<MovieDetails>{
-        return apiInterface.getMovieDetails(id, apikey, "ru-RU")
+        return apiInterface.getMovieDetails(id, APIKEY, "ru-RU")
     }
 
     override fun getTrailer(id: Int, apikey: String): Call<Trailer> {
-        return  apiInterface.getTrailer(id, apikey)
+        return  apiInterface.getTrailer(id, APIKEY)
     }
 
 

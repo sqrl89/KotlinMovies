@@ -3,15 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/drawable-v24/ic_play_circle_filled_black_24dp.xml" value="0.271" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/drawable/ic_baseline_movie_filter_24.xml" value="0.271" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/drawable/icons.xml" value="0.271" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/drawable/shape.xml" value="0.271" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/activity_movie_details.xml" value="0.5" />
+        <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/activity_movie_details.xml" value="0.33" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/activity_movies.xml" value="0.26403985507246375" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/activity_registration.xml" value="0.22" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/activity_splash.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/fragment_youtube.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/movie_item.xml" value="0.36666666666666664" />
       </map>
     </option>

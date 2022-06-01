@@ -3,8 +3,10 @@ package com.alex.kotlinmovies.view
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.alex.kotlinmovies.view.adapter.MovieAdapter
+import com.alex.kotlinmovies.view.adapters.MovieAdapter
 import com.alex.kotlinmovies.databinding.ActivityMoviesBinding
 import com.alex.kotlinmovies.model.repository.MoviesDBRepositoryImpl
 import com.alex.kotlinmovies.viewmodel.MoviesViewModel
@@ -37,6 +39,8 @@ class MoviesActivity : AppCompatActivity(), MovieAdapter.ItemClickListener {
 
     private fun initViews() {
         mRcView = mBinding.rvMovies
+        val layoutManager = GridLayoutManager(this, 2, LinearLayoutManager.VERTICAL, false)
+        mRcView.layoutManager = layoutManager
         mViewModel = MoviesViewModel(MoviesDBRepositoryImpl())
     }
 

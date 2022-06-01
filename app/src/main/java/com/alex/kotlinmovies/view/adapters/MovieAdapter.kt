@@ -1,4 +1,4 @@
-package com.alex.kotlinmovies.view.adapter
+package com.alex.kotlinmovies.view.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.alex.kotlinmovies.R
 import com.alex.kotlinmovies.data.Result
 import com.squareup.picasso.Picasso
-
 
 class MovieAdapter(
     private val mList: List<Result?>,

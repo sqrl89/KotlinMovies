@@ -9,7 +9,7 @@ import retrofit2.http.*
 interface TMDBInterface {
     @GET("3/movie/popular")
     fun getMovies(
-        @Query("api_key") sort: String,
+        @Query("api_key") apiKey: String,
         @Query("language") language: String,
         @Query("page") page: Int
     ): Call<Movies>
