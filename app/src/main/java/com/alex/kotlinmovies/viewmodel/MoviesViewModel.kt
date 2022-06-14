@@ -38,7 +38,6 @@ class MoviesViewModel(private val mMoviesRepository: MoviesDBRepository) {
         response.enqueue(object : Callback<MovieDetails> {
             override fun onResponse(call: Call<MovieDetails>, response: Response<MovieDetails>) {
                 _movieDetails.postValue(response.body())
-                Log.d("test", "details $response")
             }
             override fun onFailure(call: Call<MovieDetails>, t: Throwable) {
                 Log.d("test", "failMovieDetails")
@@ -51,7 +50,6 @@ class MoviesViewModel(private val mMoviesRepository: MoviesDBRepository) {
         response.enqueue(object: Callback<Trailer>{
             override fun onResponse(call: Call<Trailer>, response: Response<Trailer>) {
                 _trailers.postValue(response.body()?.results)
-                Log.d("test", "trailer $response")
             }
             override fun onFailure(call: Call<Trailer>, t: Throwable) {
                 Log.d("test", "trailer fail")

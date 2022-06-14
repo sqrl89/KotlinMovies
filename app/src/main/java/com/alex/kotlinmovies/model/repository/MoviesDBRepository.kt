@@ -13,6 +13,4 @@ interface MoviesDBRepository {
 
     fun getTrailer(id:Int, apikey: String): Call<Trailer>
 
-
-
 }

@@ -14,7 +14,6 @@ import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
     // todo single activity + Navigation Comp.
-    // todo добавить функционал: просмотр трейлера, еще что-нибудь
     // todo уточнить насчет ViewModel - правильно будет наследоваться от ViewModel
     // todo если регистрация прошла - добавить функционал
     // todo cache?
@@ -22,7 +21,6 @@ class MainActivity : AppCompatActivity() {
     // todo pagination
     // todo shimmer
     // todo добавить поиск
-
 
     private val mMainActivityViewModel: MainActivityViewModel = MainActivityViewModel()
 
