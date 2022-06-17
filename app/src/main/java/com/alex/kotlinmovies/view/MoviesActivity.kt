@@ -1,59 +1,35 @@
 package com.alex.kotlinmovies.view
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.alex.kotlinmovies.view.adapters.MovieAdapter
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.ui.setupWithNavController
+import com.alex.kotlinmovies.MOVIES
+import com.alex.kotlinmovies.R
 import com.alex.kotlinmovies.databinding.ActivityMoviesBinding
-import com.alex.kotlinmovies.model.repository.MoviesDBRepositoryImpl
-import com.alex.kotlinmovies.viewmodel.MoviesViewModel
 
-class MoviesActivity : AppCompatActivity(), MovieAdapter.ItemClickListener {
+class MoviesActivity : AppCompatActivity() {
 
-    private lateinit var mViewModel: MoviesViewModel
-    private lateinit var mRcView: RecyclerView
-    private lateinit var mBinding: ActivityMoviesBinding
-    private lateinit var mMoviesAdapter: MovieAdapter
+    private var mBinding: ActivityMoviesBinding? = null
+    private val binding get() = mBinding!!
+    lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mBinding = ActivityMoviesBinding.inflate(layoutInflater)
-        setContentView(mBinding.root)
-        initViews()
-        initObservers()
-        mViewModel.getMovies()
+        setContentView(binding.root)
+        MOVIES = this
+
+        navController = Navigation.findNavController(this, R.id.nav_host)
+
+        binding.bottomNavigation.setupWithNavController(navController)
 
     }
 
-    private fun initObservers() {
-        mViewModel.apply {
-            movies.observe(this@MoviesActivity) {
-                mMoviesAdapter = MovieAdapter(it, this@MoviesActivity)
-                mRcView.adapter = mMoviesAdapter
-            }
-        }
+    override fun onDestroy() {
+        super.onDestroy()
+        mBinding = null
     }
-
-    private fun initViews() {
-        mRcView = mBinding.rvMovies
-        val layoutManager = GridLayoutManager(this, 2, LinearLayoutManager.VERTICAL, false)
-        mRcView.layoutManager = layoutManager
-        mViewModel = MoviesViewModel(MoviesDBRepositoryImpl())
-    }
-
-    override fun onBackPressed() {
-        super.onBackPressed()
-        this.finishAffinity()
-    }
-
-    override fun onItemClick(position: Int) {
-        val intent = Intent(this@MoviesActivity, MovieDetailsActivity::class.java)
-        intent.putExtra("id", position)
-        startActivity(intent)
-    }
-
 }
 

@@ -22,7 +22,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.KotlinMovies.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.KotlinMovies.AppBarOverlay" parent="ThemeOverlay.AppCompat.ActionBar" />
 
     <style name="Theme.KotlinMovies.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

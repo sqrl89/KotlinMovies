@@ -14,18 +14,21 @@
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/drawable/ic_share_white.xml" value="0.362" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/drawable/icons.xml" value="0.271" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/drawable/shape.xml" value="0.271" />
+        <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/activity_favorite_movies.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/activity_movie_details.xml" value="0.5" />
-        <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/activity_movies.xml" value="0.33" />
+        <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/activity_movies.xml" value="0.25" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/activity_registration.xml" value="0.22" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/activity_splash.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/fragment_detail.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/fragment_favorite_movies.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/fragment_movies.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/fragment_youtube.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/item_movie.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/item_trailer.xml" value="0.25" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/movie_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/menu/bottom_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/menu/menu.xml" value="0.36666666666666664" />
       </map>
     </option>

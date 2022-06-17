@@ -1,19 +1,35 @@
-//package com.alex.kotlinmovies.viewmodel
-//
-//import android.util.Log
-//import androidx.lifecycle.LiveData
-//import androidx.lifecycle.MutableLiveData
-//import com.alex.kotlinmovies.data.*
-//import com.alex.kotlinmovies.model.repository.MoviesDBRepository
-//import retrofit2.Call
-//import retrofit2.Callback
-//import retrofit2.Response
-//
-//class MoviesViewModel(private val mMoviesRepository: MoviesDBRepository) {
-//
-//    private val _movies = MutableLiveData<List<MovieResult?>>()
-//    val movies: LiveData<List<MovieResult?>> = _movies
-//
+package com.alex.kotlinmovies.viewmodel
+
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
+import com.alex.kotlinmovies.REALIZATION
+import com.alex.kotlinmovies.data.Movies
+import com.alex.kotlinmovies.model.repository.RetrofitRepository
+import com.alex.kotlinmovies.data.room.MoviesRoomDatabase
+import com.alex.kotlinmovies.data.room.repository.MoviesRepositoryRealization
+import kotlinx.coroutines.launch
+import retrofit2.Response
+
+class PopularMoviesFragmentViewModel(application: Application): AndroidViewModel(application) {
+
+    private val repository = RetrofitRepository()
+    val movies: MutableLiveData<Response<Movies>> = MutableLiveData()
+    val context = application
+
+    fun getPopularMoviesRetrofit() {
+        viewModelScope.launch {
+            movies.value = repository.getPopularMovies()
+        }
+    }
+
+    fun initDatabase(){
+        val daoMovie = MoviesRoomDatabase.getInstance(context).getMovieDao()
+        REALIZATION = MoviesRepositoryRealization(daoMovie)
+    }
+
+
 //    private val _movieDetails = MutableLiveData<MovieDetails>()
 //    val movieDetails: LiveData<MovieDetails> = _movieDetails
 //
@@ -47,7 +63,7 @@
 //
 //    fun getTrailer(id: Int, apiKey: String){
 //        val response = mMoviesRepository.getTrailer(id, apiKey)
-//        response.enqueue(object: Callback<Trailer>{
+//        response.enqueue(object: Callback<Trailer> {
 //            override fun onResponse(call: Call<Trailer>, response: Response<Trailer>) {
 //                _trailers.postValue(response.body()?.results)
 //            }
@@ -56,4 +72,4 @@
 //            }
 //        })
 //    }
-//}
+}
