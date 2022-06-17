@@ -7,7 +7,6 @@ import com.alex.kotlinmovies.REALIZATION
 import com.alex.kotlinmovies.data.MovieDetails
 import com.alex.kotlinmovies.data.MovieItemModel
 import com.alex.kotlinmovies.data.Trailer
-import com.alex.kotlinmovies.data.room.repository.MoviesRepositoryRealization
 import com.alex.kotlinmovies.model.repository.RetrofitRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -34,17 +33,15 @@ class DetailViewModel : ViewModel() {
             }
         }
 
-    fun getMovieDetails(id: Int, apiKey: String) {
-        viewModelScope.launch(Dispatchers.IO) {
+    fun getMovieDetailsRetrofit(id: Int, apiKey: String) {
+        viewModelScope.launch(Dispatchers.Main) {
             movieDetails.value = repository.getMovieDetails(id, apiKey)
         }
     }
 
-    fun getTrailers(id: Int, apiKey: String) {
-        viewModelScope.launch(Dispatchers.IO) {
+    fun getTrailersRetrofit(id: Int, apiKey: String) {
+        viewModelScope.launch(Dispatchers.Main) {
             trailers.value = repository.getTrailer(id, apiKey)
         }
     }
-
-
 }

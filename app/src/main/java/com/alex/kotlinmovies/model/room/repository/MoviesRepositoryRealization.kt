@@ -1,8 +1,8 @@
-package com.alex.kotlinmovies.data.room.repository
+package com.alex.kotlinmovies.model.room.repository
 
 import androidx.lifecycle.LiveData
 import com.alex.kotlinmovies.data.MovieItemModel
-import com.alex.kotlinmovies.data.room.dao.MoviesDao
+import com.alex.kotlinmovies.model.room.dao.MoviesDao
 
 class MoviesRepositoryRealization(private val moviesDao: MoviesDao): MoviesRepository {
     override val allMovies: LiveData<List<MovieItemModel>>

@@ -9,6 +9,13 @@ import retrofit2.http.*
 
 interface ApiService {
 
+    @GET("3/movie/top_rated")
+    suspend fun getTopMovies(
+        @Query("api_key") apiKey: String,
+        @Query("language") language: String,
+        @Query("page") page: Int
+    ): Response<Movies>
+
     @GET("3/movie/popular")
     suspend fun getPopularMovies(
         @Query("api_key") apiKey: String,

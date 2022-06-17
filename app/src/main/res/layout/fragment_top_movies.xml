@@ -4,10 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.favorites.FavoriteMoviesFragment">
+    tools:context=".view.toprated.TopMoviesFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_Fav_Movies"
+        android:id="@+id/rv_Top_Movies"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background"
@@ -20,12 +20,4 @@
         tools:itemCount="6"
         tools:listitem="@layout/item_movie" />
 
-    <TextView
-        android:id="@+id/tv_add_fav_movies"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="@string/add_fav_movies"
-        android:textAlignment="center"
-        android:visibility="gone"/>
 </FrameLayout>

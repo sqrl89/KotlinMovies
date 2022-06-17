@@ -10,15 +10,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.alex.kotlinmovies.MOVIES
 import com.alex.kotlinmovies.R
 import com.alex.kotlinmovies.data.MovieItemModel
+import com.alex.kotlinmovies.view.favorites.FavoriteAdapter.FavItemClickListener
 import com.alex.kotlinmovies.databinding.FragmentFavoriteMoviesBinding
 import com.alex.kotlinmovies.viewmodel.FavoriteMoviesFragmentViewModel
 
-class FavoriteMoviesFragment : Fragment() {
+class FavoriteMoviesFragment : Fragment(), FavItemClickListener {
 
     private var mBinding: FragmentFavoriteMoviesBinding? = null
     private val binding get() = mBinding!!
     private lateinit var mRcView: RecyclerView
-    private val mMoviesAdapter by lazy { FavoriteAdapter() }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,11 +37,18 @@ class FavoriteMoviesFragment : Fragment() {
     private fun init() {
         val viewModel = ViewModelProvider(this).get(FavoriteMoviesFragmentViewModel::class.java)
         mRcView = binding.rvFavMovies
-        mRcView.adapter = mMoviesAdapter
+        val moviesAdapter = FavoriteAdapter(this)
+        mRcView.adapter = moviesAdapter
         viewModel.getAllMovies().observe(viewLifecycleOwner) {
-            mMoviesAdapter.setList(it.asReversed())
-        }
+            moviesAdapter.setList(it.asReversed())
 
+        }
+    }
+
+    override fun onItemClick(id: Int) {
+        val bundle = Bundle()
+        bundle.putSerializable("id", id)
+        MOVIES.navController.navigate(R.id.action_favorites_to_movieDetailsActivity, bundle)
     }
 
     override fun onDestroy() {
@@ -49,11 +56,4 @@ class FavoriteMoviesFragment : Fragment() {
         mBinding = null
     }
 
-    companion object {
-        fun clickMovie(id: MovieItemModel) {
-            val bundle = Bundle()
-            bundle.putSerializable("id", id)
-            MOVIES.navController.navigate(R.id.action_favorites_to_detailFragment, bundle)
-        }
-    }
 }

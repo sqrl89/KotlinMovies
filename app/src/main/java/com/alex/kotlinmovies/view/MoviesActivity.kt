@@ -1,6 +1,7 @@
 package com.alex.kotlinmovies.view
 
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation

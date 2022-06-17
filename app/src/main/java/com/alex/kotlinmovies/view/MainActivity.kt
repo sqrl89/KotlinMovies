@@ -13,14 +13,16 @@ import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
-    // todo single activity + Navigation Comp.
-    // todo уточнить насчет ViewModel - правильно будет наследоваться от ViewModel
-    // todo если регистрация прошла - добавить функционал
+
     // todo cache?
-    // todo активность с пользователем
+    // todo активность с пользователем??
     // todo pagination
-    // todo shimmer
     // todo добавить поиск
+    // todo ползунок пока загрузка
+    // todo пусто когда пустой favorite
+    // todo viewpager
+    // todo разобраться с database
+    // todo
 
     private val mMainActivityViewModel: MainActivityViewModel = MainActivityViewModel()
 

@@ -15,6 +15,10 @@ class RetrofitRepository  {
         return apiInterface.getPopularMovies(APIKEY, "ru-RU", 1)
     }
 
+    suspend fun getTopMovies(): Response<Movies> {
+        return apiInterface.getTopMovies(APIKEY, "ru-RU", 1)
+    }
+
     suspend fun getMovieDetails(id:Int, apikey: String): Response<MovieDetails>{
         return apiInterface.getMovieDetails(id, APIKEY, "ru-RU")
     }

@@ -1,11 +1,11 @@
-package com.alex.kotlinmovies.data.room
+package com.alex.kotlinmovies.model.room
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.alex.kotlinmovies.data.MovieItemModel
-import com.alex.kotlinmovies.data.room.dao.MoviesDao
+import com.alex.kotlinmovies.model.room.dao.MoviesDao
 
 @Database(entities = [MovieItemModel::class], version = 2)
 abstract class MoviesRoomDatabase: RoomDatabase() {

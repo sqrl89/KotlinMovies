@@ -26,6 +26,7 @@
     <string name="trailer">Видео</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_fav_movies">Добавьте любимые фильмы...</string>
 
 
 </resources>

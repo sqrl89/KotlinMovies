@@ -1,21 +1,24 @@
-package com.alex.kotlinmovies.view.popular
+package com.alex.kotlinmovies.view.toprated
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.alex.kotlinmovies.MOVIES
 import com.alex.kotlinmovies.R
 import com.alex.kotlinmovies.databinding.FragmentMoviesBinding
-import com.alex.kotlinmovies.view.popular.PopularAdapter.ItemClickListener
+import com.alex.kotlinmovies.databinding.FragmentTopMoviesBinding
+import com.alex.kotlinmovies.view.popular.PopularAdapter
 import com.alex.kotlinmovies.viewmodel.PopularMoviesFragmentViewModel
+import com.alex.kotlinmovies.viewmodel.TopMoviesFragmentViewModel
 
-class PopularMoviesFragment: Fragment(), ItemClickListener {
 
-    private var mBinding: FragmentMoviesBinding? = null
+class TopMoviesFragment : Fragment(), TopAdapter.TopItemClickListener {
+
+    private var mBinding: FragmentTopMoviesBinding? = null
     private val binding get() = mBinding!!
     private lateinit var mRcView: RecyclerView
 
@@ -23,9 +26,8 @@ class PopularMoviesFragment: Fragment(), ItemClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        mBinding = FragmentMoviesBinding.inflate(layoutInflater, container, false)
+        mBinding = FragmentTopMoviesBinding.inflate(layoutInflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -34,13 +36,12 @@ class PopularMoviesFragment: Fragment(), ItemClickListener {
     }
 
     private fun init() {
-        val viewModel = ViewModelProvider(this).get(PopularMoviesFragmentViewModel::class.java)
-        viewModel.initDatabase()
-        mRcView = binding.rvMovies
-        val moviesAdapter = PopularAdapter(this)
+        val viewModel = ViewModelProvider(this).get(TopMoviesFragmentViewModel::class.java)
+        mRcView = binding.rvTopMovies
+        val moviesAdapter = TopAdapter(this)
         mRcView.adapter = moviesAdapter
-        viewModel.getPopularMoviesRetrofit()
-        viewModel.movies.observe(viewLifecycleOwner) { list ->
+        viewModel.getTopMoviesRetrofit()
+        viewModel.topMovies.observe(viewLifecycleOwner) { list ->
             moviesAdapter.setList(list.body()!!.results)
         }
     }
@@ -48,7 +49,7 @@ class PopularMoviesFragment: Fragment(), ItemClickListener {
     override fun onItemClick(id: Int) {
         val bundle = Bundle()
         bundle.putSerializable("id", id)
-        MOVIES.navController.navigate(R.id.action_popular_to_movieDetailsActivity, bundle)
+        MOVIES.navController.navigate(R.id.action_topMoviesFragment_to_movieDetailsActivity, bundle)
     }
 
     override fun onDestroy() {

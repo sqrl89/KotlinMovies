@@ -1,4 +1,4 @@
-package com.alex.kotlinmovies.view.adapters
+package com.alex.kotlinmovies.view.detail
 
 import android.content.Intent
 import android.net.Uri
@@ -12,10 +12,10 @@ import com.alex.kotlinmovies.databinding.ItemTrailerBinding
 import com.squareup.picasso.Picasso
 
 
-class TrailerAdapter(
-    private var trailerList: List<ResultX?>,
-) :
+class TrailerAdapter:
     RecyclerView.Adapter<TrailerAdapter.TrailerViewHolder>() {
+
+    private var trailerList = emptyList<ResultX>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrailerViewHolder {
         val mBinding =
@@ -42,18 +42,18 @@ class TrailerAdapter(
             val context = mBinding.cardTrailerItem.context
             mBinding.apply {
                 Picasso.get()
-                    .load("https://img.youtube.com/vi/" + trailerList[position]?.key + "/hqdefault.jpg")
+                    .load("https://img.youtube.com/vi/" + trailerList[position].key + "/hqdefault.jpg")
                     .into(mBinding.imageTrailer)
 
-                mBinding.trailerName.text = trailerList[position]?.name
+                mBinding.trailerName.text = trailerList[position].name
                 mBinding.cardTrailerItem.setOnClickListener(View.OnClickListener {
                     val appIntent = Intent(
                         Intent.ACTION_VIEW,
-                        Uri.parse("vnd.youtube:" + trailerList[position]?.key)
+                        Uri.parse("vnd.youtube:" + trailerList[position].key)
                     )
                     val webIntent = Intent(
                         Intent.ACTION_VIEW,
-                        Uri.parse(YOUTUBE_BASE_URL + trailerList[position]?.key)
+                        Uri.parse(YOUTUBE_BASE_URL + trailerList[position].key)
                     )
                     if (appIntent.resolveActivity(context.packageManager) != null) {
                         context.startActivity(appIntent)

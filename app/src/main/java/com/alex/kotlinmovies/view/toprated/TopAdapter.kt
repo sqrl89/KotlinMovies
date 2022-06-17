@@ -1,4 +1,4 @@
-package com.alex.kotlinmovies.view.favorites
+package com.alex.kotlinmovies.view.toprated
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,9 +9,10 @@ import com.alex.kotlinmovies.R
 import com.alex.kotlinmovies.data.MovieItemModel
 import com.squareup.picasso.Picasso
 
-class FavoriteAdapter(val mItemClickListener: FavItemClickListener): RecyclerView.Adapter<FavoriteAdapter.ViewHolder>() {
+class TopAdapter(val mItemClickListener: TopItemClickListener) :
+    RecyclerView.Adapter<TopAdapter.ViewHolder>() {
 
-    interface FavItemClickListener{
+    interface TopItemClickListener {
         fun onItemClick(position: Int)
     }
 
@@ -37,9 +38,13 @@ class FavoriteAdapter(val mItemClickListener: FavItemClickListener): RecyclerVie
 
     inner class ViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
         val itemImage: ImageView = itemView.findViewById(R.id.itemImage)
-        init{
-            ItemView.setOnClickListener { mList[position]?.id?.let{ it -> mItemClickListener.onItemClick(it)} }
-        }
 
+        init {
+            ItemView.setOnClickListener {
+                mList[position]?.id?.let { it ->
+                    mItemClickListener.onItemClick(it)
+                }
+            }
+        }
     }
 }

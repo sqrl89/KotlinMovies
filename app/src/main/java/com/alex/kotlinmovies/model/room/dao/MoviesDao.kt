@@ -1,4 +1,4 @@
-package com.alex.kotlinmovies.data.room.dao
+package com.alex.kotlinmovies.model.room.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
