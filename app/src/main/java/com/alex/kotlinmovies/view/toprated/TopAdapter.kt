@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.alex.kotlinmovies.R
-import com.alex.kotlinmovies.data.MovieItemModel
+import com.alex.kotlinmovies.model.MovieItemModel
 import com.squareup.picasso.Picasso
 
 class TopAdapter(val mItemClickListener: TopItemClickListener) :

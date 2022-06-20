@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.alex.kotlinmovies.data.MovieItemModel
+import com.alex.kotlinmovies.model.MovieItemModel
 import com.alex.kotlinmovies.model.room.dao.MoviesDao
 
 @Database(entities = [MovieItemModel::class], version = 2)

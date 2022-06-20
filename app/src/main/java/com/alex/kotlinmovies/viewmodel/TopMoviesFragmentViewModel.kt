@@ -3,7 +3,7 @@ package com.alex.kotlinmovies.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.alex.kotlinmovies.data.Movies
+import com.alex.kotlinmovies.model.Movies
 import com.alex.kotlinmovies.model.repository.RetrofitRepository
 import kotlinx.coroutines.launch
 import retrofit2.Response

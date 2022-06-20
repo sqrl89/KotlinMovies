@@ -1,7 +1,7 @@
 package com.alex.kotlinmovies.model.room.repository
 
 import androidx.lifecycle.LiveData
-import com.alex.kotlinmovies.data.MovieItemModel
+import com.alex.kotlinmovies.model.MovieItemModel
 import com.alex.kotlinmovies.model.room.dao.MoviesDao
 
 class MoviesRepositoryRealization(private val moviesDao: MoviesDao): MoviesRepository {

@@ -3,7 +3,7 @@ package com.alex.kotlinmovies.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.alex.kotlinmovies.REALIZATION
-import com.alex.kotlinmovies.data.MovieItemModel
+import com.alex.kotlinmovies.model.MovieItemModel
 
 class FavoriteMoviesFragmentViewModel : ViewModel() {
 

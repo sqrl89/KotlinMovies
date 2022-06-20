@@ -4,9 +4,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.alex.kotlinmovies.REALIZATION
-import com.alex.kotlinmovies.data.MovieDetails
-import com.alex.kotlinmovies.data.MovieItemModel
-import com.alex.kotlinmovies.data.Trailer
+import com.alex.kotlinmovies.model.MovieDetails
+import com.alex.kotlinmovies.model.MovieItemModel
+import com.alex.kotlinmovies.model.Trailer
 import com.alex.kotlinmovies.model.repository.RetrofitRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

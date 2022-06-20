@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.alex.kotlinmovies.YOUTUBE_BASE_URL
-import com.alex.kotlinmovies.data.ResultX
+import com.alex.kotlinmovies.model.ResultX
 import com.alex.kotlinmovies.databinding.ItemTrailerBinding
 import com.squareup.picasso.Picasso
 

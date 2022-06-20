@@ -1,6 +1,6 @@
 package com.alex.kotlinmovies.model.repository
 
-import com.alex.kotlinmovies.data.User
+import com.alex.kotlinmovies.model.User
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase

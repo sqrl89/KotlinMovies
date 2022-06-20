@@ -1,9 +1,9 @@
 package com.alex.kotlinmovies.model.repository
 
 import com.alex.kotlinmovies.APIKEY
-import com.alex.kotlinmovies.data.MovieDetails
-import com.alex.kotlinmovies.data.Movies
-import com.alex.kotlinmovies.data.Trailer
+import com.alex.kotlinmovies.model.MovieDetails
+import com.alex.kotlinmovies.model.Movies
+import com.alex.kotlinmovies.model.Trailer
 import com.alex.kotlinmovies.model.apis.RetrofitInstance
 import retrofit2.Response
 

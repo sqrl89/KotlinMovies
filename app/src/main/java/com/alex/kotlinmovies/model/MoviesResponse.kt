@@ -1,4 +1,4 @@
-package com.alex.kotlinmovies.data
+package com.alex.kotlinmovies.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

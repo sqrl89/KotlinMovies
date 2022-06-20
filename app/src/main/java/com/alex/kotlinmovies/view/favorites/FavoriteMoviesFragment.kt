@@ -9,7 +9,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.alex.kotlinmovies.MOVIES
 import com.alex.kotlinmovies.R
-import com.alex.kotlinmovies.data.MovieItemModel
 import com.alex.kotlinmovies.view.favorites.FavoriteAdapter.FavItemClickListener
 import com.alex.kotlinmovies.databinding.FragmentFavoriteMoviesBinding
 import com.alex.kotlinmovies.viewmodel.FavoriteMoviesFragmentViewModel

@@ -5,7 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.alex.kotlinmovies.REALIZATION
-import com.alex.kotlinmovies.data.Movies
+import com.alex.kotlinmovies.model.Movies
 import com.alex.kotlinmovies.model.repository.RetrofitRepository
 import com.alex.kotlinmovies.model.room.MoviesRoomDatabase
 import com.alex.kotlinmovies.model.room.repository.MoviesRepositoryRealization

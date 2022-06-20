@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.alex.kotlinmovies.data.User
+import com.alex.kotlinmovies.model.User
 import com.alex.kotlinmovies.databinding.ActivityMainBinding
 import com.alex.kotlinmovies.viewmodel.MainActivityViewModel
 import com.firebase.ui.auth.AuthUI

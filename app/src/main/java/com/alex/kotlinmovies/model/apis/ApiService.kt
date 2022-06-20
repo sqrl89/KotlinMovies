@@ -1,9 +1,8 @@
 package com.alex.kotlinmovies.model.apis
 
-import com.alex.kotlinmovies.data.MovieDetails
-import com.alex.kotlinmovies.data.Movies
-import com.alex.kotlinmovies.data.Trailer
-import retrofit2.Call
+import com.alex.kotlinmovies.model.MovieDetails
+import com.alex.kotlinmovies.model.Movies
+import com.alex.kotlinmovies.model.Trailer
 import retrofit2.Response
 import retrofit2.http.*
 

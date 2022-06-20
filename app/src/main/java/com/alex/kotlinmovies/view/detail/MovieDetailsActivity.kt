@@ -2,17 +2,14 @@ package com.alex.kotlinmovies.view.detail
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.runtime.key
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.alex.kotlinmovies.*
-import com.alex.kotlinmovies.data.MovieDetails
-import com.alex.kotlinmovies.data.MovieItemModel
-import com.alex.kotlinmovies.data.ResultX
+import com.alex.kotlinmovies.model.MovieDetails
+import com.alex.kotlinmovies.model.MovieItemModel
 import com.alex.kotlinmovies.databinding.ActivityMovieDetailsBinding
 import com.alex.kotlinmovies.model.repository.SharedPref
 import com.alex.kotlinmovies.viewmodel.DetailViewModel

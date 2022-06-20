@@ -2,7 +2,7 @@ package com.alex.kotlinmovies.model.room.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.alex.kotlinmovies.data.MovieItemModel
+import com.alex.kotlinmovies.model.MovieItemModel
 
 
 @Dao
