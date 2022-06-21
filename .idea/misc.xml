@@ -11,6 +11,7 @@
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/drawable/ic_baseline_movie_filter_24.xml" value="0.271" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/drawable/ic_favorite_border_white_24dp.xml" value="0.362" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/drawable/ic_favorite_white_24dp.xml" value="0.362" />
+        <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/drawable/ic_search.xml" value="0.3515" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/drawable/ic_share_white.xml" value="0.362" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/drawable/ic_whatshot_black_24dp.xml" value="0.3455" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/drawable/icons.xml" value="0.271" />
@@ -30,8 +31,10 @@
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/item_movie.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/item_trailer.xml" value="0.25" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/movie_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/layout/movie_load_state_footer.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/menu/bottom_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/menu/menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/sqrl8/AndroidStudioProjects/KotlinMovies/app/src/main/res/menu/menu_search.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

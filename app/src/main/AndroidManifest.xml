@@ -11,10 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KotlinMovies">
         <activity
-            android:name=".view.favorites.FavoriteMoviesActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"/>
-        <activity
             android:name=".view.MainActivity"
             android:exported="true" />
         <activity

@@ -1,18 +1,13 @@
 package com.alex.kotlinmovies.view.toprated
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.alex.kotlinmovies.MOVIES
 import com.alex.kotlinmovies.R
-import com.alex.kotlinmovies.databinding.FragmentMoviesBinding
 import com.alex.kotlinmovies.databinding.FragmentTopMoviesBinding
-import com.alex.kotlinmovies.view.popular.PopularAdapter
-import com.alex.kotlinmovies.viewmodel.PopularMoviesFragmentViewModel
 import com.alex.kotlinmovies.viewmodel.TopMoviesFragmentViewModel
 
 
@@ -21,6 +16,7 @@ class TopMoviesFragment : Fragment(), TopAdapter.TopItemClickListener {
     private var mBinding: FragmentTopMoviesBinding? = null
     private val binding get() = mBinding!!
     private lateinit var mRcView: RecyclerView
+    val viewModel = ViewModelProvider(this).get(TopMoviesFragmentViewModel::class.java)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,7 +32,6 @@ class TopMoviesFragment : Fragment(), TopAdapter.TopItemClickListener {
     }
 
     private fun init() {
-        val viewModel = ViewModelProvider(this).get(TopMoviesFragmentViewModel::class.java)
         mRcView = binding.rvTopMovies
         val moviesAdapter = TopAdapter(this)
         mRcView.adapter = moviesAdapter
@@ -51,6 +46,7 @@ class TopMoviesFragment : Fragment(), TopAdapter.TopItemClickListener {
         bundle.putSerializable("id", id)
         MOVIES.navController.navigate(R.id.action_topMoviesFragment_to_movieDetailsActivity, bundle)
     }
+
 
     override fun onDestroy() {
         super.onDestroy()
