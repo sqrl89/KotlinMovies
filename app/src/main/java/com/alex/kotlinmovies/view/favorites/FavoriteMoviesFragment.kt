@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.alex.kotlinmovies.MOVIES
@@ -15,6 +16,7 @@ import com.alex.kotlinmovies.viewmodel.FavoriteMoviesFragmentViewModel
 
 class FavoriteMoviesFragment : Fragment(), FavItemClickListener {
 
+    private val viewModel by viewModels<FavoriteMoviesFragmentViewModel>()
     private var mBinding: FragmentFavoriteMoviesBinding? = null
     private val binding get() = mBinding!!
     private lateinit var mRcView: RecyclerView
@@ -34,7 +36,6 @@ class FavoriteMoviesFragment : Fragment(), FavItemClickListener {
     }
 
     private fun init() {
-        val viewModel = ViewModelProvider(this).get(FavoriteMoviesFragmentViewModel::class.java)
         mRcView = binding.rvFavMovies
         val moviesAdapter = FavoriteAdapter(this)
         mRcView.adapter = moviesAdapter

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.convertTo
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -73,7 +74,7 @@ class MovieDetailsActivity : AppCompatActivity() {
             mBinding.favoriteButton.setImageResource(R.drawable.ic_favorite_border_white_24dp)
         }
 
-//        currentMovie = intent.extras?.getSerializable("id") as MovieItemModel
+        currentMovie = intent.extras?.getSerializable("id") as MovieItemModel
         mBinding.favoriteButton.setOnClickListener {
             if (isFavorite == valueBoolean) {
                 mBinding.favoriteButton.setImageResource(R.drawable.ic_favorite_white_24dp)

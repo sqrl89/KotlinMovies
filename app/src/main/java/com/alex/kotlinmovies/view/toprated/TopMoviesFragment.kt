@@ -3,7 +3,7 @@ package com.alex.kotlinmovies.view.toprated
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import com.alex.kotlinmovies.MOVIES
 import com.alex.kotlinmovies.R
@@ -13,10 +13,11 @@ import com.alex.kotlinmovies.viewmodel.TopMoviesFragmentViewModel
 
 class TopMoviesFragment : Fragment(), TopAdapter.TopItemClickListener {
 
+    private val viewModel by viewModels<TopMoviesFragmentViewModel>()
     private var mBinding: FragmentTopMoviesBinding? = null
     private val binding get() = mBinding!!
     private lateinit var mRcView: RecyclerView
-    val viewModel = ViewModelProvider(this).get(TopMoviesFragmentViewModel::class.java)
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

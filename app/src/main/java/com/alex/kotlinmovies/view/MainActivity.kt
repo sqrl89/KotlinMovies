@@ -11,6 +11,10 @@ import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,9 +43,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         mBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
-        openRegistrationScreen()
 
+        CoroutineScope(Dispatchers.Main).launch {
+            val auth = FirebaseAuth.getInstance()
+            if (auth.currentUser==null) {
+                openRegistrationScreen()
+            } else {
+                delay(2000)
+                startActivity(Intent(this@MainActivity, MoviesActivity::class.java))
+            }
+        }
     }
+
 
     private fun openRegistrationScreen() {
         startActivity(Intent(this@MainActivity, MoviesActivity::class.java))
