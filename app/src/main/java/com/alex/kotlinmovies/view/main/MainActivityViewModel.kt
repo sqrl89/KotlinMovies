@@ -1,4 +1,4 @@
-package com.alex.kotlinmovies.viewmodel
+package com.alex.kotlinmovies.view.main
 
 import com.alex.kotlinmovies.model.User
 import com.alex.kotlinmovies.model.repository.FirebaseRepository

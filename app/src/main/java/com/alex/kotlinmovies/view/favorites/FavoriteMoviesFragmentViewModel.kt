@@ -1,4 +1,4 @@
-package com.alex.kotlinmovies.viewmodel
+package com.alex.kotlinmovies.view.favorites
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel

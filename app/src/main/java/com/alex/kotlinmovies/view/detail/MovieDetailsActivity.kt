@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.graphics.convertTo
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,7 +12,6 @@ import com.alex.kotlinmovies.model.MovieDetails
 import com.alex.kotlinmovies.model.MovieItemModel
 import com.alex.kotlinmovies.databinding.ActivityMovieDetailsBinding
 import com.alex.kotlinmovies.model.repository.SharedPref
-import com.alex.kotlinmovies.viewmodel.DetailViewModel
 import com.squareup.picasso.Picasso
 
 class MovieDetailsActivity : AppCompatActivity() {
@@ -34,7 +32,7 @@ class MovieDetailsActivity : AppCompatActivity() {
 
     private fun init() {
         val id = intent.getIntExtra("id", 0)
-        val mViewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
+        val mViewModel = ViewModelProvider(this)[DetailViewModel::class.java]
         val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         mRcViewTrailer = mBinding.rcViewTrailers
         mRcViewTrailer.adapter = mTrailerAdapter
@@ -74,20 +72,21 @@ class MovieDetailsActivity : AppCompatActivity() {
             mBinding.favoriteButton.setImageResource(R.drawable.ic_favorite_border_white_24dp)
         }
 
-        currentMovie = intent.extras?.getSerializable("id") as MovieItemModel
-        mBinding.favoriteButton.setOnClickListener {
-            if (isFavorite == valueBoolean) {
-                mBinding.favoriteButton.setImageResource(R.drawable.ic_favorite_white_24dp)
-                SharedPref.setFavorite(MOVIES, movieDetails.id.toString(), true)
-                viewModel.insert(currentMovie) {}
-                isFavorite = true
-            } else {
-                mBinding.favoriteButton.setImageResource(R.drawable.ic_favorite_border_white_24dp)
-                SharedPref.setFavorite(MOVIES, movieDetails.id.toString(), false)
-                viewModel.delete(currentMovie) {}
-                isFavorite = false
-            }
-        }
+//        currentMovie = intent.extras?.getSerializable("id") as MovieItemModel
+//        mBinding.favoriteButton.setOnClickListener {
+//            if (isFavorite == valueBoolean) {
+//                mBinding.favoriteButton.setImageResource(R.drawable.ic_favorite_white_24dp)
+//                SharedPref.setFavorite(MOVIES, movieDetails.id.toString(), true)
+//                viewModel.insert(currentMovie) {}
+//                isFavorite = true
+//            } else {
+//                mBinding.favoriteButton.setImageResource(R.drawable.ic_favorite_border_white_24dp)
+//                SharedPref.setFavorite(MOVIES, movieDetails.id.toString(), false)
+//                viewModel.delete(currentMovie) {}
+//                isFavorite = false
+//            }
+//        }
+
         mBinding.shareButton.setOnClickListener {
             val trailerList = viewModel.trailers.value?.body()?.results
             val intent = Intent()

@@ -4,20 +4,22 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.recyclerview.widget.RecyclerView
+import androidx.lifecycle.lifecycleScope
 import com.alex.kotlinmovies.MOVIES
 import com.alex.kotlinmovies.R
 import com.alex.kotlinmovies.databinding.FragmentTopMoviesBinding
-import com.alex.kotlinmovies.viewmodel.TopMoviesFragmentViewModel
+import com.alex.kotlinmovies.view.movie.PagedAdapter
+import com.alex.kotlinmovies.view.movie.PagedAdapter.*
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
-
-class TopMoviesFragment : Fragment(), TopAdapter.TopItemClickListener {
+@AndroidEntryPoint
+class TopMoviesFragment : Fragment(), PagedItemClickListener {
 
     private val viewModel by viewModels<TopMoviesFragmentViewModel>()
     private var mBinding: FragmentTopMoviesBinding? = null
     private val binding get() = mBinding!!
-    private lateinit var mRcView: RecyclerView
-
+    private lateinit var moviesAdapter: PagedAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,13 +35,22 @@ class TopMoviesFragment : Fragment(), TopAdapter.TopItemClickListener {
     }
 
     private fun init() {
-        mRcView = binding.rvTopMovies
-        val moviesAdapter = TopAdapter(this)
-        mRcView.adapter = moviesAdapter
-        viewModel.getTopMoviesRetrofit()
-        viewModel.topMovies.observe(viewLifecycleOwner) { list ->
-            moviesAdapter.setList(list.body()!!.results)
+        moviesAdapter = PagedAdapter(this)
+        binding.rvTopMovies.apply {
+            adapter = moviesAdapter
+            setHasFixedSize(true)
         }
+
+        lifecycleScope.launch {
+            viewModel.listData.collect {
+                moviesAdapter.submitData(it)
+            }
+        }
+//        mRcView.adapter = moviesAdapter
+//        viewModel.getTopMoviesRetrofit()
+//        viewModel.topMovies.observe(viewLifecycleOwner) { list ->
+//            moviesAdapter.setList(list.body()!!.results)
+//        }
     }
 
     override fun onItemClick(id: Int) {

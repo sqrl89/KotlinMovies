@@ -6,20 +6,22 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.RecyclerView
+import androidx.lifecycle.lifecycleScope
 import com.alex.kotlinmovies.MOVIES
 import com.alex.kotlinmovies.R
 import com.alex.kotlinmovies.databinding.FragmentMoviesBinding
-import com.alex.kotlinmovies.view.popular.PopularAdapter.ItemClickListener
-import com.alex.kotlinmovies.viewmodel.PopularMoviesFragmentViewModel
+import com.alex.kotlinmovies.view.movie.PagedAdapter
+import com.alex.kotlinmovies.view.movie.PagedAdapter.*
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
-class PopularMoviesFragment: Fragment(), ItemClickListener {
+@AndroidEntryPoint
+class PopularMoviesFragment : Fragment(), PagedItemClickListener {
 
     private val viewModel by viewModels<PopularMoviesFragmentViewModel>()
     private var mBinding: FragmentMoviesBinding? = null
     private val binding get() = mBinding!!
-    private lateinit var mRcView: RecyclerView
+    private lateinit var moviesAdapter: PagedAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,7 +29,6 @@ class PopularMoviesFragment: Fragment(), ItemClickListener {
     ): View {
         mBinding = FragmentMoviesBinding.inflate(layoutInflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -36,20 +37,32 @@ class PopularMoviesFragment: Fragment(), ItemClickListener {
     }
 
     private fun init() {
-        viewModel.initDatabase()
-        mRcView = binding.rvMovies
-        val moviesAdapter = PopularAdapter(this)
-        mRcView.adapter = moviesAdapter
-        viewModel.getPopularMoviesRetrofit()
-        viewModel.movies.observe(viewLifecycleOwner) { list ->
-            moviesAdapter.setList(list.body()!!.results)
+//        viewModel.initDatabase()
+        moviesAdapter = PagedAdapter(this)
+        binding.rvMovies.apply {
+            adapter = moviesAdapter
+            setHasFixedSize(true)
         }
+        lifecycleScope.launch {
+            viewModel.listData.collect {
+                moviesAdapter.submitData(it)
+            }
+        }
+
+        //        mRcView = binding.rvMovies
+//        val moviesAdapter = PopularAdapter(this)
+//        mRcView.adapter = moviesAdapter
+//        viewModel.getPopularMoviesRetrofit()
+//        viewModel.movies.observe(viewLifecycleOwner) { list ->
+//            moviesAdapter.setList(list.body()!!.results)
+//        }
     }
 
     override fun onItemClick(id: Int) {
         val bundle = Bundle()
         bundle.putSerializable("id", id)
         MOVIES.navController.navigate(R.id.action_popular_to_movieDetailsActivity, bundle)
+
     }
 
     override fun onDestroy() {

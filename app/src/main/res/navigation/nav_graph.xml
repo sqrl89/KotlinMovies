@@ -11,9 +11,6 @@
         android:label="fragment_movies"
         tools:layout="@layout/fragment_movies">
         <action
-            android:id="@+id/action_popular_to_favorites"
-            app:destination="@id/favorites" />
-        <action
             android:id="@+id/action_popular_to_movieDetailsActivity"
             app:destination="@id/movieDetailsActivity" />
     </fragment>
@@ -23,9 +20,6 @@
         android:label="fragment_favorite_movies"
         tools:layout="@layout/fragment_favorite_movies" >
         <action
-            android:id="@+id/action_favorites_to_action_popular2"
-            app:destination="@id/popular" />
-        <action
             android:id="@+id/action_favorites_to_movieDetailsActivity"
             app:destination="@id/movieDetailsActivity" />
     </fragment>
@@ -33,18 +27,17 @@
         android:id="@+id/movieDetailsActivity"
         android:name="com.alex.kotlinmovies.view.detail.MovieDetailsActivity"
         android:label="activity_movie_details"
-        tools:layout="@layout/activity_movie_details" />
+        tools:layout="@layout/activity_movie_details" >
+        <argument
+            android:name="movieItemModel"
+            app:argType="com.alex.kotlinmovies.model.MovieItemModel">
+        </argument>
+    </activity>
     <fragment
         android:id="@+id/top"
         android:name="com.alex.kotlinmovies.view.toprated.TopMoviesFragment"
         android:label="fragment_top_movies"
         tools:layout="@layout/fragment_top_movies" >
-        <action
-            android:id="@+id/action_topMoviesFragment_to_popular"
-            app:destination="@id/popular" />
-        <action
-            android:id="@+id/action_topMoviesFragment_to_favorites"
-            app:destination="@id/favorites" />
         <action
             android:id="@+id/action_topMoviesFragment_to_movieDetailsActivity"
             app:destination="@id/movieDetailsActivity" />

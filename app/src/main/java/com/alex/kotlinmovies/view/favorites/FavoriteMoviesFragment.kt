@@ -6,13 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.alex.kotlinmovies.MOVIES
 import com.alex.kotlinmovies.R
 import com.alex.kotlinmovies.view.favorites.FavoriteAdapter.FavItemClickListener
 import com.alex.kotlinmovies.databinding.FragmentFavoriteMoviesBinding
-import com.alex.kotlinmovies.viewmodel.FavoriteMoviesFragmentViewModel
 
 class FavoriteMoviesFragment : Fragment(), FavItemClickListener {
 

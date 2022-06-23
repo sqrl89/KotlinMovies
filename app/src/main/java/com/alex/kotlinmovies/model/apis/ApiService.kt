@@ -1,6 +1,5 @@
 package com.alex.kotlinmovies.model.apis
 
-import com.alex.kotlinmovies.APIKEY
 import com.alex.kotlinmovies.model.MovieDetails
 import com.alex.kotlinmovies.model.Movies
 import com.alex.kotlinmovies.model.Trailer

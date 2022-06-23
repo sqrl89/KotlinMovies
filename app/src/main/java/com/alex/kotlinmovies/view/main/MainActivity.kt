@@ -1,4 +1,4 @@
-package com.alex.kotlinmovies.view
+package com.alex.kotlinmovies.view.main
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.alex.kotlinmovies.model.User
 import com.alex.kotlinmovies.databinding.ActivityMainBinding
-import com.alex.kotlinmovies.viewmodel.MainActivityViewModel
+import com.alex.kotlinmovies.view.movie.MoviesActivity
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract
 import com.firebase.ui.auth.data.model.FirebaseAuthUIAuthenticationResult

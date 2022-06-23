@@ -1,4 +1,4 @@
-package com.alex.kotlinmovies.viewmodel
+package com.alex.kotlinmovies.view.detail
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

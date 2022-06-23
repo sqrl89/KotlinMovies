@@ -1,4 +1,4 @@
-package com.alex.kotlinmovies.view
+package com.alex.kotlinmovies.view.movie
 
 import android.os.Bundle
 import android.view.MenuItem
@@ -9,7 +9,9 @@ import androidx.navigation.ui.setupWithNavController
 import com.alex.kotlinmovies.MOVIES
 import com.alex.kotlinmovies.R
 import com.alex.kotlinmovies.databinding.ActivityMoviesBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MoviesActivity : AppCompatActivity() {
 
     private var mBinding: ActivityMoviesBinding? = null
