@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
 
     // todo cache?
     // todo активность с пользователем??
-    // todo pagination
     // todo добавить поиск
     // todo ползунок пока загрузка
     // todo пусто когда пустой favorite

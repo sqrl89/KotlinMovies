@@ -1,6 +1,5 @@
 package com.alex.kotlinmovies.view.popular
 
-import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.alex.kotlinmovies.APIKEY
@@ -20,7 +19,6 @@ class PopularMoviesPagingSource (
             val response = apiService.getPopularMovies(APIKEY, "ru-RU", currentPage)
             val responseData = mutableListOf<MovieItemModel>()
             val data = response.body()?.results ?: emptyList()
-            Log.d("RESULTS:", data.toString())
             responseData.addAll(data)
 
             LoadResult.Page(

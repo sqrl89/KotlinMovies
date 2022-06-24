@@ -40,9 +40,8 @@ class TopMoviesFragment : Fragment(), PagedItemClickListener {
             adapter = moviesAdapter
             setHasFixedSize(true)
         }
-
         lifecycleScope.launch {
-            viewModel.listData.collect {
+            viewModel.topListData.collect {
                 moviesAdapter.submitData(it)
             }
         }

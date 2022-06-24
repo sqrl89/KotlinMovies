@@ -42,4 +42,13 @@
             android:id="@+id/action_topMoviesFragment_to_movieDetailsActivity"
             app:destination="@id/movieDetailsActivity" />
     </fragment>
+    <fragment
+        android:id="@+id/search"
+        android:name="com.alex.kotlinmovies.view.search.SearchMoviesFragment"
+        android:label="fragment_search_movies"
+        tools:layout="@layout/fragment_search_movies" >
+        <action
+            android:id="@+id/action_searchMoviesFragment_to_movieDetailsActivity"
+            app:destination="@id/movieDetailsActivity" />
+    </fragment>
 </navigation>

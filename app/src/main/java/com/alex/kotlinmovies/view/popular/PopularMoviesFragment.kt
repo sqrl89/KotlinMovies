@@ -37,14 +37,13 @@ class PopularMoviesFragment : Fragment(), PagedItemClickListener {
     }
 
     private fun init() {
-//        viewModel.initDatabase()
         moviesAdapter = PagedAdapter(this)
         binding.rvMovies.apply {
             adapter = moviesAdapter
             setHasFixedSize(true)
         }
         lifecycleScope.launch {
-            viewModel.listData.collect {
+            viewModel.popularListData.collect {
                 moviesAdapter.submitData(it)
             }
         }

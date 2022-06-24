@@ -34,6 +34,7 @@ class FavoriteMoviesFragment : Fragment(), FavItemClickListener {
     }
 
     private fun init() {
+        viewModel.initDatabase()
         mRcView = binding.rvFavMovies
         val moviesAdapter = FavoriteAdapter(this)
         mRcView.adapter = moviesAdapter

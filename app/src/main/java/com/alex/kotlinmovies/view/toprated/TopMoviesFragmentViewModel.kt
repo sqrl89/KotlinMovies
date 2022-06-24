@@ -21,20 +21,8 @@ class TopMoviesFragmentViewModel
 @Inject
 constructor(private val apiService: ApiService) : ViewModel() {
 
-    val listData = Pager(PagingConfig(pageSize = 1)) {
+    val topListData = Pager(PagingConfig(pageSize = 6)) {
         TopMoviesPagingSource(apiService)
     }.flow.cachedIn(viewModelScope)
 
 }
-
-//class TopMoviesFragmentViewModel: ViewModel() {
-//
-//    private val repository = RetrofitRepository()
-//    val topMovies: MutableLiveData<Response<Movies>> = MutableLiveData()
-//
-//    fun getTopMoviesRetrofit() {
-//        viewModelScope.launch {
-//            topMovies.value = repository.getTopMovies()
-//        }
-//    }
-//}

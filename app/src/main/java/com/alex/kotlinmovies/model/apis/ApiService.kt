@@ -35,9 +35,10 @@ interface ApiService {
         @Query("api_key") apiKey: String,
     ): Response<Trailer>
 
-    @GET("search/movie")
+    @GET("3/search/movie")
     suspend fun searchMovies(
         @Query("api_key") apiKey: String,
+        @Query("language") language: String,
         @Query("query") query: String,
         @Query("page") page: Int
     ): Response<Movies>

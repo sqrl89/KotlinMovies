@@ -27,6 +27,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_fav_movies">Добавьте любимые фильмы...</string>
+    <string name="top">Лучшее</string>
+    <string name="popular">Популярное</string>
+    <string name="search">Поиск</string>
+    <string name="favorite">Избранное</string>
 
 
 </resources>

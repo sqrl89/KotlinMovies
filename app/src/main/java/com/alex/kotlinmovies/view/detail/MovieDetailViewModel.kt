@@ -12,7 +12,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
-class DetailViewModel : ViewModel() {
+class MovieDetailViewModel : ViewModel() {
 
     private val repository = RetrofitRepository()
 
