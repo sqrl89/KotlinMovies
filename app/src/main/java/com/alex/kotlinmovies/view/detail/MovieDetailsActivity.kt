@@ -5,13 +5,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.alex.kotlinmovies.*
+import com.alex.kotlinmovies.databinding.ActivityMovieDetailsBinding
 import com.alex.kotlinmovies.model.MovieDetails
 import com.alex.kotlinmovies.model.MovieItemModel
-import com.alex.kotlinmovies.databinding.ActivityMovieDetailsBinding
 import com.alex.kotlinmovies.model.repository.SharedPref
 import com.squareup.picasso.Picasso
 
@@ -72,20 +71,22 @@ class MovieDetailsActivity : AppCompatActivity() {
             mBinding.favoriteButton.setImageResource(R.drawable.ic_favorite_border_white_24dp)
         }
 
-//        currentMovie = intent.extras?.getSerializable("id") as MovieItemModel
-        mBinding.favoriteButton.setOnClickListener {
-            if (isFavorite == valueBoolean) {
-                mBinding.favoriteButton.setImageResource(R.drawable.ic_favorite_white_24dp)
-                SharedPref.setFavorite(MOVIES, movieDetails?.id.toString(), true)
-                mViewModel.insert(currentMovie) {}
-                isFavorite = true
-            } else {
-                mBinding.favoriteButton.setImageResource(R.drawable.ic_favorite_border_white_24dp)
-                SharedPref.setFavorite(MOVIES, movieDetails?.id.toString(), false)
-                mViewModel.delete(currentMovie) {}
-                isFavorite = false
+//        val gotMovie = intent.extras?.getSerializable("id")
+//        currentMovie = gotMovie as MovieItemModel
+            mBinding.favoriteButton.setOnClickListener {
+                if (isFavorite == valueBoolean) {
+                    mBinding.favoriteButton.setImageResource(R.drawable.ic_favorite_white_24dp)
+                    SharedPref.setFavorite(MOVIES, movieDetails?.id.toString(), true)
+                    mViewModel.insert(currentMovie) {}
+                    isFavorite = true
+                } else {
+                    mBinding.favoriteButton.setImageResource(R.drawable.ic_favorite_border_white_24dp)
+                    SharedPref.setFavorite(MOVIES, movieDetails?.id.toString(), false)
+                    mViewModel.delete(currentMovie) {}
+                    isFavorite = false
+                }
             }
-        }
+
 
         mBinding.shareButton.setOnClickListener {
             val trailerList = mViewModel.trailers.value?.body()?.results

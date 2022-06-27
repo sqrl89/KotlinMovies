@@ -43,7 +43,6 @@ class SearchMoviesFragment : Fragment(), PagedItemClickListener {
             adapter = moviesAdapter
             setHasFixedSize(true)
         }
-
     }
 
     private fun queryListener() {
@@ -75,5 +74,4 @@ class SearchMoviesFragment : Fragment(), PagedItemClickListener {
         super.onDestroy()
         mBinding = null
     }
-
 }

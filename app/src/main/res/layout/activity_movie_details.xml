@@ -32,7 +32,6 @@
                     android:background="@drawable/background"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    load="@{movieDetails.poster}"
                     app:layout_constraintTop_toTopOf="@id/movie_details_header_constraint" />
 
                 <ImageView

@@ -47,21 +47,12 @@ class PopularMoviesFragment : Fragment(), PagedItemClickListener {
                 moviesAdapter.submitData(it)
             }
         }
-
-        //        mRcView = binding.rvMovies
-//        val moviesAdapter = PopularAdapter(this)
-//        mRcView.adapter = moviesAdapter
-//        viewModel.getPopularMoviesRetrofit()
-//        viewModel.movies.observe(viewLifecycleOwner) { list ->
-//            moviesAdapter.setList(list.body()!!.results)
-//        }
     }
 
     override fun onItemClick(id: Int) {
         val bundle = Bundle()
         bundle.putSerializable("id", id)
         MOVIES.navController.navigate(R.id.action_popular_to_movieDetailsActivity, bundle)
-
     }
 
     override fun onDestroy() {

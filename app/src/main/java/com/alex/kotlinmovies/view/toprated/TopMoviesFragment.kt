@@ -45,11 +45,6 @@ class TopMoviesFragment : Fragment(), PagedItemClickListener {
                 moviesAdapter.submitData(it)
             }
         }
-//        mRcView.adapter = moviesAdapter
-//        viewModel.getTopMoviesRetrofit()
-//        viewModel.topMovies.observe(viewLifecycleOwner) { list ->
-//            moviesAdapter.setList(list.body()!!.results)
-//        }
     }
 
     override fun onItemClick(id: Int) {
@@ -57,7 +52,6 @@ class TopMoviesFragment : Fragment(), PagedItemClickListener {
         bundle.putSerializable("id", id)
         MOVIES.navController.navigate(R.id.action_topMoviesFragment_to_movieDetailsActivity, bundle)
     }
-
 
     override fun onDestroy() {
         super.onDestroy()
