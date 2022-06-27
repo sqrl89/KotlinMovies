@@ -5,9 +5,9 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.alex.kotlinmovies.MOVIES
-import com.alex.kotlinmovies.R
+import androidx.navigation.fragment.findNavController
 import com.alex.kotlinmovies.databinding.FragmentTopMoviesBinding
+import com.alex.kotlinmovies.model.MovieItemModel
 import com.alex.kotlinmovies.view.movie.PagedAdapter
 import com.alex.kotlinmovies.view.movie.PagedAdapter.*
 import dagger.hilt.android.AndroidEntryPoint
@@ -47,11 +47,11 @@ class TopMoviesFragment : Fragment(), PagedItemClickListener {
         }
     }
 
-    override fun onItemClick(id: Int) {
-        val bundle = Bundle()
-        bundle.putSerializable("id", id)
-        MOVIES.navController.navigate(R.id.action_topMoviesFragment_to_movieDetailsActivity, bundle)
+    override fun onItemClick(movieItemModel: MovieItemModel) {
+        val action = TopMoviesFragmentDirections.actionTopMoviesFragmentToMovieDetailsActivity(movieItemModel)
+        findNavController().navigate(action)
     }
+
 
     override fun onDestroy() {
         super.onDestroy()

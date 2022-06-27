@@ -50,6 +50,7 @@ class MainActivity : AppCompatActivity() {
             } else {
                 delay(2000)
                 startActivity(Intent(this@MainActivity, MoviesActivity::class.java))
+                finish()
             }
         }
     }

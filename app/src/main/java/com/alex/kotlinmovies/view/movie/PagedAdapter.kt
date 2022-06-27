@@ -14,7 +14,7 @@ class PagedAdapter(private val mItemClickListener: PagedItemClickListener) :
     PagingDataAdapter<MovieItemModel, ImageViewHolder>(diffCallback) {
 
     interface PagedItemClickListener {
-        fun onItemClick(id: Int)
+        fun onItemClick(movieItemModel: MovieItemModel)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
@@ -35,9 +35,9 @@ class PagedAdapter(private val mItemClickListener: PagedItemClickListener) :
         RecyclerView.ViewHolder(binding.root) {
         init {
             binding.itemImage.setOnClickListener {
-                getItem(position)?.id?.let { it ->
-                    mItemClickListener.onItemClick(it)
-                }
+                val position = bindingAdapterPosition
+                val item = getItem(position)
+                item?.let { it -> mItemClickListener.onItemClick(it) }
             }
         }
     }

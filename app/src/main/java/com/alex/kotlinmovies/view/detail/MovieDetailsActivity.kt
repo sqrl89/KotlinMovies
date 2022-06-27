@@ -2,9 +2,11 @@ package com.alex.kotlinmovies.view.detail
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.alex.kotlinmovies.*
@@ -16,6 +18,7 @@ import com.squareup.picasso.Picasso
 
 class MovieDetailsActivity : AppCompatActivity() {
 
+    private val args by navArgs<MovieDetailsActivityArgs>()
     private val mViewModel by viewModels<MovieDetailViewModel>()
     private lateinit var mBinding: ActivityMovieDetailsBinding
     private lateinit var mRcViewTrailer: RecyclerView
@@ -32,7 +35,7 @@ class MovieDetailsActivity : AppCompatActivity() {
     }
 
     private fun init() {
-        val id = intent.getIntExtra("id", 0)
+        val id = args.movieItemModel.id
         val layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         mRcViewTrailer = mBinding.rcViewTrailers
         mRcViewTrailer.adapter = mTrailerAdapter
@@ -71,29 +74,31 @@ class MovieDetailsActivity : AppCompatActivity() {
             mBinding.favoriteButton.setImageResource(R.drawable.ic_favorite_border_white_24dp)
         }
 
-//        val gotMovie = intent.extras?.getSerializable("id")
-//        currentMovie = gotMovie as MovieItemModel
-            mBinding.favoriteButton.setOnClickListener {
-                if (isFavorite == valueBoolean) {
-                    mBinding.favoriteButton.setImageResource(R.drawable.ic_favorite_white_24dp)
-                    SharedPref.setFavorite(MOVIES, movieDetails?.id.toString(), true)
-                    mViewModel.insert(currentMovie) {}
-                    isFavorite = true
-                } else {
-                    mBinding.favoriteButton.setImageResource(R.drawable.ic_favorite_border_white_24dp)
-                    SharedPref.setFavorite(MOVIES, movieDetails?.id.toString(), false)
-                    mViewModel.delete(currentMovie) {}
-                    isFavorite = false
-                }
+        currentMovie = args.movieItemModel
+        mBinding.favoriteButton.setOnClickListener {
+            if (isFavorite == valueBoolean) {
+                mBinding.favoriteButton.setImageResource(R.drawable.ic_favorite_white_24dp)
+                SharedPref.setFavorite(MOVIES, movieDetails?.id.toString(), true)
+                mViewModel.insert(currentMovie) {}
+                isFavorite = true
+            } else {
+                mBinding.favoriteButton.setImageResource(R.drawable.ic_favorite_border_white_24dp)
+                SharedPref.setFavorite(MOVIES, movieDetails?.id.toString(), false)
+                mViewModel.delete(currentMovie) {}
+                isFavorite = false
             }
+        }
+//        }
 
 
         mBinding.shareButton.setOnClickListener {
             val trailerList = mViewModel.trailers.value?.body()?.results
             val intent = Intent()
             intent.action = Intent.ACTION_SEND
-            intent.putExtra(Intent.EXTRA_TEXT,
-                "Посмотри фильм: $YOUTUBE_BASE_URL${trailerList?.get(0)?.key}")
+            intent.putExtra(
+                Intent.EXTRA_TEXT,
+                "Посмотри фильм: $YOUTUBE_BASE_URL${trailerList?.get(0)?.key}"
+            )
             intent.type = "text/plain"
             startActivity(Intent.createChooser(intent, "Поделиться:"))
         }

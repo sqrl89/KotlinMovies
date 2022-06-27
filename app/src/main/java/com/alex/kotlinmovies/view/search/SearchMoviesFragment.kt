@@ -7,11 +7,14 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.alex.kotlinmovies.MOVIES
 import com.alex.kotlinmovies.R
 import com.alex.kotlinmovies.databinding.FragmentSearchMoviesBinding
+import com.alex.kotlinmovies.model.MovieItemModel
 import com.alex.kotlinmovies.view.movie.PagedAdapter
 import com.alex.kotlinmovies.view.movie.PagedAdapter.PagedItemClickListener
+import com.alex.kotlinmovies.view.toprated.TopMoviesFragmentDirections
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -43,6 +46,7 @@ class SearchMoviesFragment : Fragment(), PagedItemClickListener {
             adapter = moviesAdapter
             setHasFixedSize(true)
         }
+
     }
 
     private fun queryListener() {
@@ -63,15 +67,14 @@ class SearchMoviesFragment : Fragment(), PagedItemClickListener {
         }
     }
 
-    override fun onItemClick(id: Int) {
-        val bundle = Bundle()
-        bundle.putSerializable("id", id)
-        MOVIES.navController.navigate(R.id.action_searchMoviesFragment_to_movieDetailsActivity,
-            bundle)
+    override fun onItemClick(movieItemModel: MovieItemModel) {
+        val action = SearchMoviesFragmentDirections.actionSearchMoviesFragmentToMovieDetailsActivity(movieItemModel)
+        findNavController().navigate(action)
     }
 
     override fun onDestroy() {
         super.onDestroy()
         mBinding = null
     }
+
 }

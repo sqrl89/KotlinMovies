@@ -6,11 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.alex.kotlinmovies.MOVIES
 import com.alex.kotlinmovies.R
 import com.alex.kotlinmovies.view.favorites.FavoriteAdapter.FavItemClickListener
 import com.alex.kotlinmovies.databinding.FragmentFavoriteMoviesBinding
+import com.alex.kotlinmovies.model.MovieItemModel
+import com.alex.kotlinmovies.view.popular.PopularMoviesFragmentDirections
 
 class FavoriteMoviesFragment : Fragment(), FavItemClickListener {
 
@@ -25,7 +28,6 @@ class FavoriteMoviesFragment : Fragment(), FavItemClickListener {
     ): View {
         mBinding = FragmentFavoriteMoviesBinding.inflate(layoutInflater, container, false)
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -40,19 +42,16 @@ class FavoriteMoviesFragment : Fragment(), FavItemClickListener {
         mRcView.adapter = moviesAdapter
         viewModel.getAllMovies().observe(viewLifecycleOwner) {
             moviesAdapter.setList(it.asReversed())
-
         }
     }
 
-    override fun onItemClick(id: Int) {
-        val bundle = Bundle()
-        bundle.putSerializable("id", id)
-        MOVIES.navController.navigate(R.id.action_favorites_to_movieDetailsActivity, bundle)
+    override fun onItemClick(movieItemModel: MovieItemModel) {
+        val action = FavoriteMoviesFragmentDirections.actionFavoritesToMovieDetailsActivity(movieItemModel)
+        findNavController().navigate(action)
     }
 
     override fun onDestroy() {
         super.onDestroy()
         mBinding = null
     }
-
 }

@@ -15,7 +15,7 @@ data class Movies(
 @Entity(tableName = "movie_table")
 data class MovieItemModel(
     @PrimaryKey(autoGenerate = true)
-    val id: Int,
+    var id: Int,
     val adult: Boolean,
     val backdrop_path: String,
     val original_language: String,
