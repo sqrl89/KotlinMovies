@@ -19,12 +19,7 @@ import kotlinx.coroutines.launch
 class MainActivity : AppCompatActivity() {
 
     // todo cache?
-    // todo активность с пользователем??
-    // todo добавить поиск
     // todo ползунок пока загрузка
-    // todo пусто когда пустой favorite
-    // todo viewpager
-    // todo разобраться с database
     // todo
 
     private val mMainActivityViewModel: MainActivityViewModel = MainActivityViewModel()
@@ -48,13 +43,12 @@ class MainActivity : AppCompatActivity() {
             if (auth.currentUser==null) {
                 openRegistrationScreen()
             } else {
-                delay(2000)
+                delay(1500)
                 startActivity(Intent(this@MainActivity, MoviesActivity::class.java))
                 finish()
             }
         }
     }
-
 
     private fun openRegistrationScreen() {
         startActivity(Intent(this@MainActivity, MoviesActivity::class.java))

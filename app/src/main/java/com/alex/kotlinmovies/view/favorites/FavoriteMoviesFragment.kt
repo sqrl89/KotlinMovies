@@ -8,12 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.alex.kotlinmovies.MOVIES
-import com.alex.kotlinmovies.R
 import com.alex.kotlinmovies.view.favorites.FavoriteAdapter.FavItemClickListener
 import com.alex.kotlinmovies.databinding.FragmentFavoriteMoviesBinding
 import com.alex.kotlinmovies.model.MovieItemModel
-import com.alex.kotlinmovies.view.popular.PopularMoviesFragmentDirections
 
 class FavoriteMoviesFragment : Fragment(), FavItemClickListener {
 
@@ -36,7 +33,7 @@ class FavoriteMoviesFragment : Fragment(), FavItemClickListener {
     }
 
     private fun init() {
-        viewModel.initDatabase()
+
         mRcView = binding.rvFavMovies
         val moviesAdapter = FavoriteAdapter(this)
         mRcView.adapter = moviesAdapter

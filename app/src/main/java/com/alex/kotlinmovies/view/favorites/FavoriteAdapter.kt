@@ -13,7 +13,6 @@ class FavoriteAdapter(private val mItemClickListener: FavItemClickListener) : Re
         fun onItemClick(movieItemModel: MovieItemModel)
     }
 
-//    private val mItemClickListener: FavItemClickListener? = null
     private var mList = emptyList<MovieItemModel>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
