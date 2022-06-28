@@ -28,7 +28,7 @@
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/movie_details_image"
                     android:layout_width="match_parent"
-                    android:layout_height="221dp"
+                    android:layout_height="@dimen/dim222"
                     android:background="@drawable/background"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -36,23 +36,25 @@
 
                 <ImageView
                     android:id="@+id/share_button"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_width="@dimen/dim30"
+                    android:layout_height="@dimen/dim30"
+                    android:layout_marginTop="@dimen/dim16"
+                    android:layout_marginEnd="@dimen/dim16"
                     android:src="@drawable/ic_share_white"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/share_button" />
 
                 <ImageView
                     android:id="@+id/favorite_button"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_width="@dimen/dim30"
+                    android:layout_height="@dimen/dim30"
+                    android:layout_marginTop="@dimen/dim16"
+                    android:layout_marginEnd="@dimen/dim16"
                     android:src="@drawable/ic_favorite_border_white_24dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/share_button" />
+                    app:layout_constraintTop_toBottomOf="@id/share_button"
+                    android:contentDescription="@string/favorite_button" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -75,9 +77,9 @@
                     android:id="@+id/movie_details_body_genre_container2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:elevation="4dp"
-                    app:cardCornerRadius="10dp"
+                    android:layout_marginEnd="@dimen/dim20"
+                    android:elevation="@dimen/dim4"
+                    app:cardCornerRadius="@dimen/dim10"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/movie_details_body_release_container">
 
@@ -85,8 +87,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/icons"
-                        android:paddingStart="8dp"
-                        android:paddingEnd="8dp">
+                        android:paddingStart="@dimen/dim8"
+                        android:paddingEnd="@dimen/dim8">
 
                         <TextView
                             android:id="@+id/movie_details_body_genre2"
@@ -96,7 +98,7 @@
                             android:text="@string/genre"
                             android:textAlignment="textStart"
                             android:textColor="#FFFFFF"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/dim_text18"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -106,12 +108,12 @@
                     android:id="@+id/movie_details_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="@dimen/dim4"
                     android:fontFamily="@font/be_vietnam_bold"
                     android:gravity="center"
                     android:text="@string/movie_s_name"
                     android:textColor="#FFFFFF"
-                    android:textSize="24sp"
+                    android:textSize="@dimen/dim_text24"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -121,13 +123,13 @@
                     android:id="@+id/movie_details_tagline"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="@dimen/dim8"
                     android:fontFamily="@font/be_vietnam_bold"
                     android:gravity="center"
                     android:text="@string/tagline"
                     android:textAlignment="center"
                     android:textColor="#B3FFFFFF"
-                    android:textSize="18sp"
+                    android:textSize="@dimen/dim_text18"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -137,10 +139,10 @@
                     android:id="@+id/movie_details_body_release_container"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="8dp"
-                    android:elevation="4dp"
-                    app:cardCornerRadius="10dp"
+                    android:layout_marginStart="@dimen/dim20"
+                    android:layout_marginTop="@dimen/dim8"
+                    android:elevation="@dimen/dim4"
+                    app:cardCornerRadius="@dimen/dim10"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/movie_details_tagline">
 
@@ -148,19 +150,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/icons"
-                        android:paddingStart="8dp"
-                        android:paddingEnd="8dp">
-
-
+                        android:paddingStart="@dimen/dim8"
+                        android:paddingEnd="@dimen/dim8">
+                        
                         <TextView
                             android:id="@+id/movie_details_body_release_date_item"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="4dp"
+                            android:layout_marginStart="@dimen/dim4"
                             android:fontFamily="@font/be_vietnam_bold"
                             android:text="@string/date"
                             android:textColor="#FFFFFF"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/dim_text18"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -170,9 +171,9 @@
                     android:id="@+id/movie_details_body_genre_container"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="4dp"
-                    android:elevation="4dp"
-                    app:cardCornerRadius="10dp"
+                    android:layout_marginEnd="@dimen/dim4"
+                    android:elevation="@dimen/dim4"
+                    app:cardCornerRadius="@dimen/dim10"
                     app:layout_constraintEnd_toStartOf="@+id/movie_details_body_genre_container2"
                     app:layout_constraintTop_toTopOf="@+id/movie_details_body_genre_container2">
 
@@ -180,8 +181,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/icons"
-                        android:paddingStart="8dp"
-                        android:paddingEnd="8dp">
+                        android:paddingStart="@dimen/dim8"
+                        android:paddingEnd="@dimen/dim8">
 
                         <TextView
                             android:id="@+id/movie_details_body_genre"
@@ -191,7 +192,7 @@
                             android:text="@string/genre"
                             android:textAlignment="textStart"
                             android:textColor="#FFFFFF"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/dim_text18"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -202,29 +203,29 @@
                     android:id="@+id/movie_details_body_rating_container"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="@dimen/dim4"
                     android:backgroundTint="#F5C518"
-                    android:elevation="4dp"
-                    app:cardCornerRadius="10dp"
+                    android:elevation="@dimen/dim4"
+                    app:cardCornerRadius="@dimen/dim10"
                     app:layout_constraintStart_toStartOf="@+id/movie_details_body_release_container"
                     app:layout_constraintTop_toBottomOf="@+id/movie_details_body_release_container">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingStart="8dp"
-                        android:paddingEnd="8dp"
-                        android:paddingBottom="1dp">
+                        android:paddingStart="@dimen/dim8"
+                        android:paddingEnd="@dimen/dim8"
+                        android:paddingBottom="@dimen/dim1">
 
                         <TextView
                             android:id="@+id/movie_details_body_score_item"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="4dp"
+                            android:layout_marginStart="@dimen/dim4"
                             android:fontFamily="@font/be_vietnam_bold"
                             android:text="@string/_9_8"
                             android:textColor="@color/black"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/dim_text18"
                             android:textStyle="bold"
                             app:layout_constraintStart_toEndOf="@+id/movie_details_body_score"
                             app:layout_constraintTop_toTopOf="@+id/movie_details_body_score" />
@@ -236,7 +237,7 @@
                             android:fontFamily="@font/be_vietnam_bold"
                             android:text="@string/rating"
                             android:textColor="@color/black"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/dim_text18"
                             android:textStyle="bold"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -247,8 +248,8 @@
                     android:id="@+id/movie_details_body_country_container"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:elevation="4dp"
-                    app:cardCornerRadius="10dp"
+                    android:elevation="@dimen/dim4"
+                    app:cardCornerRadius="@dimen/dim10"
                     app:layout_constraintEnd_toEndOf="@+id/movie_details_body_genre_container2"
                     app:layout_constraintTop_toTopOf="@+id/movie_details_body_rating_container">
 
@@ -256,8 +257,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/icons"
-                        android:paddingStart="8dp"
-                        android:paddingEnd="8dp">
+                        android:paddingStart="@dimen/dim8"
+                        android:paddingEnd="@dimen/dim8">
 
                         <TextView
                             android:id="@+id/movie_details_body_country"
@@ -267,7 +268,7 @@
                             android:text="@string/country"
                             android:textAlignment="center"
                             android:textColor="#FFFFFF"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/dim_text18"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
@@ -278,13 +279,13 @@
                     android:id="@+id/movie_details_body_main_overview_item"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="@dimen/dim8"
+                    android:layout_marginTop="@dimen/dim8"
+                    android:layout_marginEnd="@dimen/dim8"
                     app:documentView_text="@string/overview"
                     app:documentView_textAlignment="justified"
                     app:documentView_textColor="#FFFFFF"
-                    app:documentView_textSize="16sp"
+                    app:documentView_textSize="@dimen/dim_text16"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/movie_details_body_rating_container" />
@@ -293,12 +294,12 @@
                     android:id="@+id/movie_details_body_main_trailer_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="@dimen/dim20"
+                    android:layout_marginTop="@dimen/dim8"
                     android:fontFamily="@font/be_vietnam_bold"
                     android:text="@string/trailer"
                     android:textColor="@color/white"
-                    android:textSize="18sp"
+                    android:textSize="@dimen/dim_text18"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/movie_details_body_main_overview_item" />
@@ -307,10 +308,10 @@
                     android:id="@+id/card_trailer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="4dp"
-                    android:elevation="4dp"
-                    app:cardCornerRadius="4dp"
+                    android:layout_marginStart="@dimen/dim8"
+                    android:layout_marginTop="@dimen/dim4"
+                    android:elevation="@dimen/dim4"
+                    app:cardCornerRadius="@dimen/dim4"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/movie_details_body_main_trailer_name">

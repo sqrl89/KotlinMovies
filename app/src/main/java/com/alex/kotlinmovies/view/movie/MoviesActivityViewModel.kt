@@ -14,5 +14,4 @@ class MoviesActivityViewModel(application: Application) : AndroidViewModel(appli
         val daoMovie = MoviesRoomDatabase.getInstance(context).getMovieDao()
         REALIZATION = MoviesRepositoryRealization(daoMovie)
     }
-
 }

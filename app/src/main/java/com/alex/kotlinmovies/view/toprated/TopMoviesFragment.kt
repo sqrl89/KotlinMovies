@@ -48,10 +48,9 @@ class TopMoviesFragment : Fragment(), PagedItemClickListener {
     }
 
     override fun onItemClick(movieItemModel: MovieItemModel) {
-        val action = TopMoviesFragmentDirections.actionTopMoviesFragmentToMovieDetailsActivity(movieItemModel)
+        val action = TopMoviesFragmentDirections.actionTopFragmentToMovieDetailsActivity(movieItemModel)
         findNavController().navigate(action)
     }
-
 
     override fun onDestroy() {
         super.onDestroy()

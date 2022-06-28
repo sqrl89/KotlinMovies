@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.alex.kotlinmovies.model.MovieItemModel
 
-
 @Dao
 interface MoviesDao {
 

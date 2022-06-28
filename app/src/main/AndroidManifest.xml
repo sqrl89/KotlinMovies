@@ -15,16 +15,17 @@
         <activity
             android:name=".view.detail.MovieDetailsActivity"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".view.movie.MoviesActivity"
             android:exported="false"
-            android:label="@string/title_activity_registration"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.KotlinMovies.NoActionBar" />
         <activity
             android:name=".view.main.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:label="@string/title_activity_registration"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -37,7 +37,6 @@ class SearchMoviesFragment : Fragment(), PagedItemClickListener {
         super.onViewCreated(view, savedInstanceState)
         init()
         queryListener()
-
     }
 
     private fun init() {
@@ -46,7 +45,6 @@ class SearchMoviesFragment : Fragment(), PagedItemClickListener {
             adapter = moviesAdapter
             setHasFixedSize(true)
         }
-
     }
 
     private fun queryListener() {
@@ -68,7 +66,7 @@ class SearchMoviesFragment : Fragment(), PagedItemClickListener {
     }
 
     override fun onItemClick(movieItemModel: MovieItemModel) {
-        val action = SearchMoviesFragmentDirections.actionSearchMoviesFragmentToMovieDetailsActivity(movieItemModel)
+        val action = SearchMoviesFragmentDirections.actionSearchFragmentToMovieDetailsActivity(movieItemModel)
         findNavController().navigate(action)
     }
 

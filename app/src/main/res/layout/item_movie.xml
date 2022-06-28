@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="5dp"
-    app:cardElevation="6dp"
-    android:layout_margin="4dp"
+    app:cardCornerRadius="@dimen/dim4"
+    app:cardElevation="@dimen/dim4"
+    android:layout_margin="@dimen/dim4"
     android:backgroundTint="@color/black">
 
     <ImageView
@@ -14,7 +14,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        tools:srcCompat="@tools:sample/avatars">
+        tools:srcCompat="@tools:sample/avatars"
+        android:contentDescription="@string/movie_item">
     </ImageView>
 
 

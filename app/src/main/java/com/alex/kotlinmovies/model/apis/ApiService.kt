@@ -43,6 +43,4 @@ interface ApiService {
         @Query("page") page: Int
     ): Response<Movies>
 
-
-
 }

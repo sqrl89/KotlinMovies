@@ -51,7 +51,7 @@ class PopularMoviesFragment : Fragment(), PagedItemClickListener {
     }
 
     override fun onItemClick(movieItemModel: MovieItemModel) {
-        val action = PopularMoviesFragmentDirections.actionPopularToMovieDetailsActivity(movieItemModel)
+        val action = PopularMoviesFragmentDirections.actionPopularFragmentToMovieDetailsActivity(movieItemModel)
         findNavController().navigate(action)
     }
 

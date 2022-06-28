@@ -11,7 +11,6 @@ import com.alex.kotlinmovies.model.ResultX
 import com.alex.kotlinmovies.databinding.ItemTrailerBinding
 import com.squareup.picasso.Picasso
 
-
 class TrailerAdapter:
     RecyclerView.Adapter<TrailerAdapter.TrailerViewHolder>() {
 
@@ -46,7 +45,7 @@ class TrailerAdapter:
                     .into(mBinding.imageTrailer)
 
                 mBinding.trailerName.text = trailerList[position].name
-                mBinding.cardTrailerItem.setOnClickListener(View.OnClickListener {
+                mBinding.cardTrailerItem.setOnClickListener {
                     val appIntent = Intent(
                         Intent.ACTION_VIEW,
                         Uri.parse("vnd.youtube:" + trailerList[position].key)
@@ -60,7 +59,7 @@ class TrailerAdapter:
                     } else {
                         context.startActivity(webIntent)
                     }
-                })
+                }
             }
         }
     }

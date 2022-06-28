@@ -43,7 +43,7 @@ class FavoriteMoviesFragment : Fragment(), FavItemClickListener {
     }
 
     override fun onItemClick(movieItemModel: MovieItemModel) {
-        val action = FavoriteMoviesFragmentDirections.actionFavoritesToMovieDetailsActivity(movieItemModel)
+        val action = FavoriteMoviesFragmentDirections.actionFavoritesFragmentToMovieDetailsActivity(movieItemModel)
         findNavController().navigate(action)
     }
 

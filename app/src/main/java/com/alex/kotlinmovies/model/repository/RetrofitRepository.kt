@@ -11,14 +11,6 @@ class RetrofitRepository  {
 
     private val apiInterface = RetrofitInstance.create()
 
-    suspend fun getPopularMovies(): Response<Movies> {                           // запрос в API
-        return apiInterface.getPopularMovies(APIKEY, "ru-RU", 1)
-    }
-
-    suspend fun getTopMovies(): Response<Movies> {
-        return apiInterface.getTopMovies(APIKEY, "ru-RU", 1)
-    }
-
     suspend fun getMovieDetails(id:Int, apikey: String): Response<MovieDetails>{
         return apiInterface.getMovieDetails(id, APIKEY, "ru-RU")
     }

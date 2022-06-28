@@ -11,7 +11,7 @@
         android:label="fragment_movies"
         tools:layout="@layout/fragment_movies">
         <action
-            android:id="@+id/action_popular_to_movieDetailsActivity"
+            android:id="@+id/action_popularFragment_to_movieDetailsActivity"
             app:destination="@id/movieDetailsActivity" />
     </fragment>
     <fragment
@@ -20,7 +20,7 @@
         android:label="fragment_favorite_movies"
         tools:layout="@layout/fragment_favorite_movies" >
         <action
-            android:id="@+id/action_favorites_to_movieDetailsActivity"
+            android:id="@+id/action_favoritesFragment_to_movieDetailsActivity"
             app:destination="@id/movieDetailsActivity" />
     </fragment>
     <activity
@@ -39,7 +39,7 @@
         android:label="fragment_top_movies"
         tools:layout="@layout/fragment_top_movies" >
         <action
-            android:id="@+id/action_topMoviesFragment_to_movieDetailsActivity"
+            android:id="@+id/action_topFragment_to_movieDetailsActivity"
             app:destination="@id/movieDetailsActivity" />
     </fragment>
     <fragment
@@ -48,7 +48,7 @@
         android:label="fragment_search_movies"
         tools:layout="@layout/fragment_search_movies" >
         <action
-            android:id="@+id/action_searchMoviesFragment_to_movieDetailsActivity"
+            android:id="@+id/action_searchFragment_to_movieDetailsActivity"
             app:destination="@id/movieDetailsActivity" />
     </fragment>
 </navigation>

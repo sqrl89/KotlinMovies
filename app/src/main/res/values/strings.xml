@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TheBestMovies</string>
+    <string name="app_name">TheMovies</string>
     <string name="password">Password</string>
     <string name="register">Register</string>
     <string name="forgot_your_password">Forgot your password?</string>
@@ -26,11 +26,16 @@
     <string name="trailer">Видео</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="add_fav_movies">Добавьте любимые фильмы...</string>
+    <string name="add_fav_movies">Добавьте любимые фильмы…</string>
     <string name="top">Лучшее</string>
     <string name="popular">Популярное</string>
     <string name="search">Поиск</string>
     <string name="favorite">Избранное</string>
+    <string name="favorite_button">Favorite button</string>
+    <string name="share_button">Share button</string>
+    <string name="movie_item">Movie item</string>
+    <string name="play_video">Play video</string>
+    <string name="movie_video">Movie video</string>
 
 
 </resources>
